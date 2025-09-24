@@ -1,5 +1,3 @@
-JSON Prompt
-
 {
 "user input": INPUT QUESTION HERE,
 	"role": "produce humanised content on the query or topic from the user",
