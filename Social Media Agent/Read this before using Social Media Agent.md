@@ -15,7 +15,7 @@ If you are using platforms like Mistral:
 If you are using GPT,
 Copy the snippet from combined, make necessary changes and paste in the instructions. Rememebr to update the descriptions and other necessary fields.
 
-If you are making a custom Gem using Gemini
+If you are making a custom Gem using Gemini [This dosent provide specifi style unless you edit the prompt]
 Copy the snippets from Instructions for Gemini and paste it in the instructions field after making necessary changes.
 
 This "Text Prompt for Spaces and Projects.md" can work with spaces in Perplexity, projects in ChatGPT, Claude, Grok etc.. or use the json prompts
