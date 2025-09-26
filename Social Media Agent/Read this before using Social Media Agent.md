@@ -18,7 +18,7 @@ Copy the snippet from combined, make necessary changes and paste in the instruct
 If you are making a custom Gem using Gemini
 Copy the snippets from Instructions for Gemini and paste it in the instructions field after making necessary changes.
 
-This JSON snippet can also work with spaces in Perplexity, projects in ChatGPT, Claude, Grok etc..
+This "Text Prompt for Spaces and Projects.md" can work with spaces in Perplexity, projects in ChatGPT, Claude, Grok etc.. or use the json prompts
 
 ---
 
