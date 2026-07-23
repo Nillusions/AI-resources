@@ -1,0 +1,37 @@
+{
+  "name": "presentation-design-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "geticons.js",
+  "dependencies": {
+    "core-util-is": "^1.0.3",
+    "detect-libc": "^2.1.2",
+    "https": "^1.0.0",
+    "image-size": "^1.2.1",
+    "immediate": "^3.0.6",
+    "inherits": "^2.0.4",
+    "isarray": "^1.0.0",
+    "jszip": "^3.10.1",
+    "lie": "^3.3.0",
+    "pako": "^1.0.11",
+    "pptxgenjs": "^4.0.1",
+    "process-nextick-args": "^2.0.1",
+    "queue": "^6.0.2",
+    "readable-stream": "^2.3.8",
+    "safe-buffer": "^5.1.2",
+    "semver": "^7.8.5",
+    "setimmediate": "^1.0.5",
+    "sharp": "^0.35.3",
+    "string_decoder": "^1.1.1",
+    "tslib": "^2.8.1",
+    "undici-types": "^6.21.0",
+    "util-deprecate": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
