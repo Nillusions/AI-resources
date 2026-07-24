@@ -67,11 +67,16 @@ Pick ONE treatment for the deck:
 
 Apply the same treatment to every photo in the deck.
 
-### 2.5 Aspect and cropping
+### 2.5 Aspect, Cropping, and Masking
 
-- Preserve source aspect ratio. **Never stretch.**
+- Preserve source aspect ratio. **Never stretch. Never squish. Never randomly adjust dimensions.**
+- **Masks and uniform scaling only.** When fitting an image into any container (rectangular, circular, arc, curved cut-out), use a clipping mask. The image retains its native proportions inside the mask.
+- When scaling, lock the aspect ratio — width and height scale by the same factor. Never set width and height independently.
 - Crop to fit the layout container. Prefer subject-preserving crops (people's faces, focal object retained).
 - Full-bleed on hero slides only.
+- For circular masks: use `rounding: true` on image options, or use the image as a fill inside `pres.ShapeType.ellipse`.
+- For arc / curved cut-out masks: build the mask shape first, apply the image as a shape fill. The image is cropped by the shape boundary, not resized to match it.
+- Always specify `sizing: { type: 'cover', w: <w>, h: <h> }` or `sizing: { type: 'contain', w: <w>, h: <h> }` when the container aspect differs from the source image. Never omit the `sizing` property in these cases — the pptxgenjs default is to stretch.
 
 ### 2.6 File hygiene
 
@@ -336,6 +341,9 @@ For each deck:
      ```
    - Illustration → same as photo or SVG depending on format.
    - Never omit `w` and `h`. Never omit `sizing` when the container aspect differs from the source — the default is to stretch.
+   - **Never stretch or squish.** Always use `sizing: { type: 'cover' }` or `sizing: { type: 'contain' }` — never raw `w`/`h` alone when the container aspect differs from source.
+   - For circular image masks: `slide.addImage({ ..., rounding: true, sizing: { type: 'cover', w: size, h: size } })` or use the image as a fill inside `pres.ShapeType.ellipse`.
+   - For arc / curved cut-out masks: build the shape, apply the image as a shape fill. The image is cropped by the shape, not resized.
    - Add `altText` on every image for the QA accessibility check.
 8. **Verify** — post-embed, confirm no missing assets, no distortion, correct aspect ratio.
 

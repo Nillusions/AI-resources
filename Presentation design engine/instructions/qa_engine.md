@@ -76,7 +76,7 @@ Content preservation is the strictest rule in this engine. A design failure is f
 - [ ] Repeated elements (cards, columns, list items) are structurally identical.
 - [ ] Balance is either intentional symmetric or intentional asymmetric — not accidental.
 - [ ] Whitespace is 30-60% of slide area.
-- [ ] No element accidentally clipped by slide edge.
+- [ ] No element *accidentally* clipped by slide edge. Deliberate overflow (shapes, arcs, decorative elements extending past the edge) is accepted and encouraged — judge in PowerPoint, not preview tools.
 - [ ] Corner radii consistent (one token used throughout the deck).
 
 **Auto-fix:** snap to grid, apply spacing scale, unify corner radii.
@@ -85,18 +85,21 @@ Content preservation is the strictest rule in this engine. A design failure is f
 
 ## 5. Images
 
-- [ ] No stretched images (aspect ratio preserved everywhere).
+- [ ] **No stretched or squished images** — aspect ratio preserved everywhere. Masks and uniform scaling only.
+- [ ] No randomly adjusted image dimensions — width and height always scale by the same factor.
+- [ ] Every image uses `sizing: { type: 'cover' }` or `sizing: { type: 'contain' }` when container aspect differs from source.
+- [ ] Circular/curved masks preserve the image's native proportions inside the mask.
 - [ ] No pixelated / low-resolution images (min 1200 × 800 for inset, 1920 × 1080 for full-bleed).
 - [ ] No missing images (all placeholders replaced with real assets).
 - [ ] Consistent treatment across the deck (all color, all muted, all B&W, or all duotone — one).
-- [ ] No stretched or distorted crops.
 - [ ] Images support the slide message (not decorative filler).
-- [ ] No stock clichés (see `asset_engine.md` §10 rejection list).
+- [ ] No generic stock. No stock clichés (see `asset_engine.md` §10 rejection list).
+- [ ] No blurry or off-topic images.
 - [ ] No visible watermarks.
 - [ ] No embedded brand logos that aren't the deck subject.
 - [ ] Attribution placed where the license or style requires it.
 
-**Auto-fix:** re-fetch replacement image if quality fails; re-crop if aspect ratio was violated.
+**Auto-fix:** re-fetch replacement image if quality fails; re-crop (never re-stretch) if aspect ratio was violated. Always use mask-based cropping for non-rectangular containers.
 
 ---
 
@@ -218,11 +221,42 @@ Cover, section dividers, and closing may deviate from content chrome — content
 
 ---
 
-## 15. Final Senior-Designer Gate
+## 15. The Four Moves Audit
+
+Before the senior-designer gate, verify the deck meets the Four Moves standard:
+
+### Deck Math Check (per 10 slides — scale proportionally)
+
+- [ ] AT LEAST 5 slides carry a real image (built into the layout, not dropped in a box).
+- [ ] AT LEAST 5 slides use structural curvature (circles, arcs, curved cut-outs — not just rounded corners).
+- [ ] AT LEAST 2 slides contain drawn explanations (infographics, maps, labelled diagrams, callouts, visual metaphors).
+- [ ] AT MOST 1 slide is plain standalone (no move applied).
+
+### Per-Slide Move Check
+
+- [ ] Every slide hits at least one of the Four Moves (curvature, real images, drawn explanations, backgrounds).
+- [ ] If you squint and lose the words, the slide still communicates visually — it doesn't fail.
+- [ ] Text on images has a scrim, solid panel, or darker crop behind it. Body text ~4.5:1 contrast, big headings ~3:1.
+
+### Background Variety
+
+- [ ] Backgrounds change across the deck — not all-white.
+- [ ] Mix of light, dark, and image-led backgrounds.
+- [ ] No orange-heavy palettes (we have too many).
+
+**Auto-fix:** If a slide fails the move check, apply one of the Five Approved Patterns: curvature, images, drawn, callouts, or maps. If the deck math doesn't add up, redesign the weakest slides to hit the quotas.
+
+---
+
+## 16. Final Senior-Designer Gate
 
 Ask, for the deck as a whole:
 
 **"Would a senior corporate presentation designer sign off on this?"**
+
+And then the harder question:
+
+**"Would the model have made this?"** Ask it out loud before you submit. If yes, it isn't finished.
 
 Sub-questions:
 - Does the deck have a clear identity?
@@ -230,6 +264,15 @@ Sub-questions:
 - Would this feel out of place in a boardroom, a keynote, or a client meeting?
 - Is there any slide that looks like an AI wrote it?
 - Does the deck feel *designed*, or does it feel *generated*?
+
+### Pre-Submit Checklist (all six must pass)
+
+1. [ ] Opened in PowerPoint, not a preview tool.
+2. [ ] Backgrounds change across the deck.
+3. [ ] Half the slides carry a real image.
+4. [ ] Every word is readable at a glance.
+5. [ ] Curvature is structural, not rounded corners.
+6. [ ] At least two drawn explanations.
 
 If any answer is unsatisfying: iterate.
 
@@ -241,7 +284,7 @@ Max **3 iterations** across the QA loop. After 3, if issues remain:
 
 ---
 
-## 16. Auto-Fix vs. Escalate
+## 17. Auto-Fix vs. Escalate
 
 | Issue | Auto-fix | Escalate |
 |---|---|---|
@@ -256,7 +299,7 @@ Max **3 iterations** across the QA loop. After 3, if issues remain:
 
 ---
 
-## 17. QA Loop Structure
+## 18. QA Loop Structure
 
 ```
 loop {

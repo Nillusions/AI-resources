@@ -215,10 +215,32 @@ Editorial and consulting styles typically use no elevation. Startup and product 
 ## 12. Image Treatment Tokens
 
 - Corner radius: match deck radius token, or 0 for full-bleed hero images.
-- Overlay for text-on-image: 40-60% dark scrim, or solid inset panel.
+- Overlay for text-on-image: 40-60% dark scrim, solid inset panel, or a darker crop behind it. Body text on images requires ~4.5:1 contrast; big headings ~3:1.
 - Filter: never add heavy filters. Subtle desaturation (-10 to -20% saturation) is allowed for tonal cohesion.
 - Duotone: allowed as a deliberate deck-wide treatment (must apply to all photos in deck if used).
 - Aspect: preserve source aspect. Crop, never stretch.
+
+### 12.1 Image Integrity (strict — never violate)
+
+- **Never stretch or squish** an image. No exceptions.
+- **Never randomly adjust** image width or height independently to fill a container.
+- **Masks and uniform scaling only.** To fit an image into a non-standard shape (circle, arc, curved cut-out), use a clipping mask — do not distort the source.
+- When scaling, lock the aspect ratio. Scale width and height by the same factor.
+- In pptxgenjs, always specify `sizing: { type: 'cover', w: <w>, h: <h> }` or `sizing: { type: 'contain', w: <w>, h: <h> }` when the container aspect differs from the source image. Never omit the `sizing` property in these cases.
+- For circular masks: use `rounding: true` on the image options, or clip via a shape with the image as a fill. The image inside the mask retains its native proportions.
+- For arc / curved cut-out masks: build the mask shape first (`addShape` with appropriate geometry), then apply the image as a shape fill. The image is cropped by the shape boundary, not resized to match it.
+
+### 12.2 Curvature Tokens
+
+Curvature is a first-class design element — not decoration. At least half the slides in a deck should use structural curvature.
+
+- **Circular image masks** — `rounding: true` on `addImage`, or image fill inside `pres.ShapeType.ellipse`.
+- **Arcs and half-circles** — custom shapes or `pres.ShapeType.arc`. Use as layout dividers, background accents, or content containers.
+- **Overlapping discs** — multiple ellipses at varying sizes and opacities, positioned to create depth.
+- **Curved cut-outs** — a full-color rectangle with a circular or arc-shaped hole revealing the background or an image beneath.
+- **Radial layouts** — elements arranged on a circular path, radiating from a central subject.
+
+Curvature must be structural (shapes the layout, holds content, guides the eye) — not cosmetic (a rounded corner on a text box does not count).
 
 ---
 

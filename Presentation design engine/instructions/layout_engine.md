@@ -21,6 +21,7 @@ Zone positions can be inverted (title bottom, content top) as a deliberate style
 - Outer safe margin: **0.4"** on all sides.
 - No primary text or content-bearing element crosses into this margin.
 - Full-bleed elements (hero images, color blocks) ignore safe margin — that's the point.
+- **Shapes past the slide edge are normal and accepted.** Decorative shapes, arcs, circles, and color blocks may extend beyond the slide boundary for visual interest. This is a deliberate design technique, not an error. Always judge the result in PowerPoint — preview tools may render overflow differently.
 - Page numbers and brand marks may sit within the outer 0.4"–0.6" band.
 
 ---
@@ -175,11 +176,32 @@ The cover, section dividers, and closing slides may deviate; content slides may 
 
 For each slide:
 
-1. Identify slide role (cover / agenda / section / content / stat / chart / process / quote / comparison / closing).
-2. Consult `references/layout_patterns.md`.
-3. Pick a pattern that fits the role AND the content weight.
-4. Log the pattern used (in-memory for the deck) so you don't repeat it for the same role.
-5. Apply the style tokens from `design_system.md`.
+1. **First, pick one of the Five Approved Patterns** (see §12.1 below). Decide which pattern this slide will be *before* opening the layout. Designing first and decorating after is how boxy slides happen.
+2. Identify slide role (cover / agenda / section / content / stat / chart / process / quote / comparison / closing).
+3. Consult `references/layout_patterns.md`.
+4. Pick a layout pattern that fits the role AND the content weight AND supports the chosen approved pattern.
+5. Log the pattern used (in-memory for the deck) so you don't repeat it for the same role.
+6. Apply the style tokens from `design_system.md`.
+
+### 12.1 The Five Approved Patterns
+
+Every slide should aim for at least one of these. They represent what the model still can't do. Pick one before you design.
+
+1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background. Structural curves that shape the layout.
+2. **Images** — One photo does half the work. Full-bleed left, one oversized curved corner right. The image is built into the layout, not dropped into a box.
+3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional. Infographics, pyramids, cycles.
+4. **Callouts** — One subject, labels radiating out. The strongest pattern we have. Use it often. Works for any subject that needs explanation.
+5. **Maps** — Models still can't draw a real map. Any true geography beats any chart. Use for any content with a geographic dimension.
+
+### 12.2 Deck Math Quotas
+
+Per 10 slides (scale proportionally):
+- AT LEAST 5 slides with a real image
+- AT LEAST 5 slides where curvature is structural
+- AT LEAST 2 drawn explanations
+- AT MOST 1 plain standalone slide (no move applied)
+
+Track these counts as you design. One strong slide can satisfy multiple quotas simultaneously.
 
 ### Variation rules within a deck
 - If a deck has 3 content slides, use at least 2 different content patterns.
@@ -202,7 +224,19 @@ For each slide:
 
 ---
 
-## 14. Layout Failure Modes to Avoid
+## 14. Background Variety (mandatory)
+
+Backgrounds must change across the deck. Ten identical white pages reads as machine output.
+
+- Mix light, dark, and image-led backgrounds across the deck.
+- No all-white decks. Every deck must include at least one dark background slide and at least one image-led background.
+- Avoid orange-heavy palettes — we have too many.
+- Background changes should feel intentional, not random. Use section dividers and cover slides as natural transition points.
+- A background can be: solid color, gradient, full-bleed image with overlay, split (half color / half image), textured, or pattern-based.
+
+---
+
+## 15. Layout Failure Modes to Avoid
 
 - **Center-everything syndrome** — every element centered horizontally with no visual anchor.
 - **Bullet-list default** — reflex bulleting when the content isn't a list.
@@ -214,7 +248,7 @@ For each slide:
 
 ---
 
-## 15. When Content Doesn't Fit
+## 16. When Content Doesn't Fit
 
 Priority order:
 

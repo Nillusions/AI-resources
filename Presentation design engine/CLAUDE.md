@@ -36,6 +36,65 @@ Every design decision must improve understanding.
 
 ---
 
+## The Four Moves — Design Standard
+
+**Hit at least one on every slide.** These are the moves the model still cannot make. Your job is to beat the model, not match it.
+
+### Move 1: Curvature
+Circles, arcs, curved cut-outs, radial layouts. Not just rounded corners — structural curvature that shapes the slide.
+
+- **DO:** Circular image masks, arcs, radial layouts, overlapping discs.
+- **NO:** Square cards. Plain tables. Right angles everywhere.
+
+### Move 2: Real Images
+A photo that means something, built into the layout — not dropped into a box.
+
+- **DO:** Full-bleed photos, cut-outs, images crossing shapes, images doing structural work.
+- **NO:** Generic stock. Stretched, blurry, or off-topic images.
+
+### Move 3: Drawn Explanations
+Infographics, maps, pyramids, cycles, a subject with callouts. Humans win outright here.
+
+- **DO:** Real maps, labelled diagrams, visual metaphors, stacked layers with labels, callout patterns.
+- **NO:** A bar chart renamed "infographic." Icons on a bullet list.
+
+### Move 4: Backgrounds
+Change the background across the deck. Ten identical white pages reads as machine output.
+
+- **DO:** Mix light, dark, and image-led backgrounds.
+- **NO:** All-white decks. Orange-heavy palettes — we have too many.
+
+### Deck Math (per 10 slides — scale up or down proportionally)
+
+| Quota | Count |
+|---|---|
+| Slides with a real image | AT LEAST 5 |
+| Slides where curvature is structural | AT LEAST 5 |
+| Drawn explanations | AT LEAST 2 |
+| Plain standalone slides (no move) | AT MOST 1 |
+
+One strong slide can hit three targets at once.
+
+### Five Patterns That Pass
+
+Pick one pattern **before** you design the slide. Decide which of these five a slide is going to be. Designing first and decorating after is how boxy slides happen.
+
+1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background.
+2. **Images** — One photo does half the work. Full-bleed left, one oversized curved corner right.
+3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional.
+4. **Callouts** — One subject, labels radiating out. The strongest pattern we have. Use it often.
+5. **Maps** — Models still can't draw a real map. Any true geography beats any chart.
+
+### Shapes Past the Slide Edge
+
+Shapes extending past the slide edge is normal and accepted. An image slightly cropped at the edge is fine (lowest priority on the list). Always judge the final result in PowerPoint, not in preview tools — preview tools lie.
+
+### The One Test
+
+Before submitting any slide, ask out loud: **"Would the model have made this?"** If yes, it isn't finished. Do something the machine still can't.
+
+---
+
 ## Primary Goal
 
 Given a raw PowerPoint presentation:
@@ -237,10 +296,21 @@ Only improve presentation.
 
 ### Step 5 — Improve slides
 
+**Before designing each slide, pick one of the Five Approved Patterns** (curvature, images, drawn, callouts, maps). Decide which pattern this slide will be first. Designing first and decorating after is how boxy slides happen.
+
 Refer to `references/layout_patterns.md`. Pick a layout pattern per slide. Vary patterns within the deck — no two slides of the same role should share the exact same pattern.
+
+Track the Deck Math as you go (per 10 slides, scaled proportionally):
+- AT LEAST 5 with a real image
+- AT LEAST 5 where curvature is structural
+- AT LEAST 2 drawn explanations
+- AT MOST 1 plain standalone slide
 
 Possible improvements:
 
+- Structural curvature (circles, arcs, curved cut-outs, radial layouts)
+- Real images built into the layout (not dropped into boxes)
+- Drawn explanations (infographics, maps, labelled diagrams, callout patterns)
 - Better layouts
 - Stronger hierarchy
 - Whitespace
@@ -250,11 +320,11 @@ Possible improvements:
 - Icons
 - Illustrations
 - Photography
-- Infographics
 - Callouts
 - Highlighted statistics
+- Background variety (mix light, dark, and image-led)
 
-Every addition must improve communication.
+Every addition must improve communication. Every slide must pass the test: "Would the model have made this?"
 
 ### Step 6 — Improve charts and tables
 
@@ -343,8 +413,16 @@ Images must support the message.
 
 Avoid decorative stock photos.
 Avoid clichés (handshakes, businesspeople at laptops, generic teamwork).
-Never stretch images.
 Prefer large impactful imagery over many small images.
+
+### Image Integrity (strict — never violate)
+
+- **Never stretch or squish images.** No exceptions.
+- **Never randomly adjust** image dimensions to fill a container.
+- **Use masks and uniform scaling only.** To fit an image into a non-standard shape (circle, arc, curved cut-out), use a clipping mask — do not distort the source.
+- When scaling, lock the aspect ratio. Scale both width and height by the same factor.
+- Use `sizing: { type: 'cover' }` or `sizing: { type: 'contain' }` in pptxgenjs — never omit the `sizing` property when the container aspect differs from the source image.
+- For circular or curved masks: crop via shape clipping (`rounding` property or shape-based masks), preserving the image's native proportions inside the mask.
 
 See `instructions/asset_engine.md` for sources and selection rules.
 
@@ -422,7 +500,20 @@ Before exporting ask:
 
 **Does this look like a presentation designed by an experienced corporate presentation designer?**
 
-If the answer is no:
+And then the harder question:
+
+**Would the model have made this?** If yes, it isn't finished. Beat the model — don't match it.
+
+### Pre-Submit Checklist (all six must pass)
+
+1. Opened in PowerPoint, not a preview tool.
+2. Backgrounds change across the deck.
+3. Half the slides carry a real image.
+4. Every word is readable at a glance.
+5. Curvature is structural, not just rounded corners.
+6. At least two drawn explanations in the deck.
+
+If the answer to any is no:
 - Continue improving.
 - Max 3 iterations before flagging for human review.
 
