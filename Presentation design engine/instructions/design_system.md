@@ -239,6 +239,8 @@ Curvature is a first-class design element — not decoration. At least half the 
 - **Overlapping discs** — multiple ellipses at varying sizes and opacities, positioned to create depth.
 - **Curved cut-outs** — a full-color rectangle with a circular or arc-shaped hole revealing the background or an image beneath.
 - **Radial layouts** — elements arranged on a circular path, radiating from a central subject.
+- **Curved arrows and pointers** — arrows that curve to point at things, connecting elements or drawing attention to key content. Use `pres.ShapeType.arc` with arrowhead options, or build compound curved connectors. Curved arrows between process steps, radiating from a subject to its labels, or sweeping across a slide to guide the eye. This is specifically requested by the client — "arrows that curve to point to things would be appreciated."
+- **Curved connectors** — use `pres.ShapeType.curvedConnector3` or similar to connect process steps, diagram nodes, or callout labels. Always prefer curved over straight connectors.
 
 Curvature must be structural (shapes the layout, holds content, guides the eye) — not cosmetic (a rounded corner on a text box does not count).
 

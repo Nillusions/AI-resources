@@ -227,6 +227,54 @@ Rules of use:
 
 ---
 
+## Infographic / Visual Explanation Patterns (prefer over bullet lists)
+
+**Default behavior:** When a slide contains list or bullet content, evaluate whether it should be converted to one of these infographic patterns. List content presented visually is something the model cannot replicate — this is the highest-leverage improvement.
+
+### IG1. Radial callout (subject + labels)
+- Central image or icon as the subject
+- 4-6 labels radiating outward with curved arrows/lines pointing from the subject
+- Each label has a small icon + title + one-line description
+- **Use for:** features of a product, aspects of a topic, benefits of a service. This is the strongest pattern we have — use it often.
+
+### IG2. Pyramid / stacked layers
+- Triangular or trapezoidal layers stacked vertically
+- Labels on each layer or to the side with curved pointers
+- Rounded, dimensional appearance (not flat rectangles)
+- **Use for:** hierarchies, priorities, maturity models, funnels.
+
+### IG3. Cycle diagram
+- 3-6 nodes arranged on a circular path
+- Curved arrows between nodes showing flow direction
+- Icon + label inside or beside each node
+- **Use for:** iterative processes, feedback loops, recurring workflows.
+
+### IG4. Curved-arrow process flow
+- Steps connected by curved arrows (not straight lines)
+- Each step in a rounded container with icon + title + brief description
+- Flow can be horizontal, vertical, or S-shaped
+- **Use for:** sequential processes, user journeys, implementation steps. Prefer over P1/P2 when curved arrows would add visual interest.
+
+### IG5. Hub and spoke
+- Central hub (circle or rounded rectangle) with the main topic
+- 4-8 spokes radiating out to satellite nodes
+- Curved lines connecting hub to satellites
+- **Use for:** ecosystems, service offerings, capability maps, stakeholder maps.
+
+### IG6. Comparison columns with visual elements
+- 2-3 columns, each with a large icon/illustration at top
+- Key metrics or features listed below with visual indicators (bars, dots, check marks)
+- NOT just text columns — each column must have visual differentiation
+- **Use for:** product comparisons, plan tiers, option evaluation.
+
+### IG7. Timeline with curved path
+- A curved or S-shaped path across the slide
+- Milestone markers along the path
+- Labels alternating above/below the path
+- **Use for:** project timelines, historical progressions, roadmaps. More visually interesting than straight timelines.
+
+---
+
 ## Comparison Patterns
 
 ### CO1. Side-by-side panels
@@ -415,6 +463,8 @@ Rules of use:
 - Same slide role occurring twice within one deck: always use two different patterns for that role.
 - Match pattern weight to content weight — a one-sentence slide doesn't need L4 (three columns); a dense feature list doesn't fit L9 (highlight callout).
 - If content strongly suggests a specific pattern (a quote → Q*), use it; don't force variety by picking a wrong pattern.
+- **List-to-infographic check:** Before assigning an L* pattern to a slide with bullet/list content, evaluate whether an IG* infographic pattern would work better. If the content describes a process, hierarchy, cycle, comparison, or ecosystem, use IG1-IG7 instead of a text-based layout.
+- **Curved arrows preference:** When a slide uses connectors, flow arrows, or callout pointers, prefer curved over straight. IG1 (radial callout), IG3 (cycle), IG4 (curved-arrow process), and IG7 (curved-path timeline) all use curved elements.
 
 ---
 

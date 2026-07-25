@@ -41,10 +41,10 @@ Every design decision must improve understanding.
 **Hit at least one on every slide.** These are the moves the model still cannot make. Your job is to beat the model, not match it.
 
 ### Move 1: Curvature
-Circles, arcs, curved cut-outs, radial layouts. Not just rounded corners — structural curvature that shapes the slide.
+Circles, arcs, curved cut-outs, radial layouts, **curved arrows that point to things**. Not just rounded corners — structural curvature that shapes the slide.
 
-- **DO:** Circular image masks, arcs, radial layouts, overlapping discs.
-- **NO:** Square cards. Plain tables. Right angles everywhere.
+- **DO:** Circular image masks, arcs, radial layouts, overlapping discs, curved arrows/pointers connecting elements or drawing attention to key content.
+- **NO:** Square cards. Plain tables. Right angles everywhere. Straight-line-only connectors when a curve would be more dynamic.
 
 ### Move 2: Real Images
 A photo that means something, built into the layout — not dropped into a box.
@@ -53,10 +53,10 @@ A photo that means something, built into the layout — not dropped into a box.
 - **NO:** Generic stock. Stretched, blurry, or off-topic images.
 
 ### Move 3: Drawn Explanations
-Infographics, maps, pyramids, cycles, a subject with callouts. Humans win outright here.
+Infographics, maps, pyramids, cycles, a subject with callouts. Humans win outright here. **Any slide with list/bullet content should be considered for conversion to an infographic — this is the highest-leverage improvement you can make.**
 
-- **DO:** Real maps, labelled diagrams, visual metaphors, stacked layers with labels, callout patterns.
-- **NO:** A bar chart renamed "infographic." Icons on a bullet list.
+- **DO:** Real maps, labelled diagrams, visual metaphors, stacked layers with labels, callout patterns, pyramids, cycles, flowcharts, radial diagrams, curved-arrow process flows. Convert bullet lists into visual explanations wherever the content allows.
+- **NO:** A bar chart renamed "infographic." Icons on a bullet list. Leaving list content as bullets when it could be a visual diagram.
 
 ### Move 4: Backgrounds
 Change the background across the deck. Ten identical white pages reads as machine output.
@@ -79,10 +79,10 @@ One strong slide can hit three targets at once.
 
 Pick one pattern **before** you design the slide. Decide which of these five a slide is going to be. Designing first and decorating after is how boxy slides happen.
 
-1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background.
+1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background. Curved arrows pointing to elements.
 2. **Images** — One photo does half the work. Full-bleed left, one oversized curved corner right.
-3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional.
-4. **Callouts** — One subject, labels radiating out. The strongest pattern we have. Use it often.
+3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional. Convert bullet/list content into infographics: pyramids, cycles, radial layouts, flowcharts with curved connectors.
+4. **Callouts** — One subject, labels radiating out with curved arrows/lines. The strongest pattern we have. Use it often.
 5. **Maps** — Models still can't draw a real map. Any true geography beats any chart.
 
 ### Shapes Past the Slide Edge
@@ -180,7 +180,7 @@ Roll a Recipe at the start of each run, immediately after Step 3 (visual directi
 | Corner radius | `design_system.md` §6 (0, 4, 8, 12, 16, 24) | Pick one that fits the style; exclude the last used. |
 | Cover pattern | `references/layout_patterns.md` C1–C8 | Exclude last 3 used covers. |
 | Section divider pattern | S1–S6 | Exclude last 2 used dividers. |
-| Content patterns | L1–L15 | Pick a different mix per deck; no two slides of the same role in the deck share a pattern. |
+| Content patterns | L1–L15, IG1–IG7 | Pick a different mix per deck; no two slides of the same role in the deck share a pattern. Prefer IG* infographic patterns for list/bullet content. |
 
 ### Compatibility (soft)
 
@@ -308,9 +308,10 @@ Track the Deck Math as you go (per 10 slides, scaled proportionally):
 
 Possible improvements:
 
-- Structural curvature (circles, arcs, curved cut-outs, radial layouts)
+- Structural curvature (circles, arcs, curved cut-outs, radial layouts, **curved arrows/pointers**)
 - Real images built into the layout (not dropped into boxes)
 - Drawn explanations (infographics, maps, labelled diagrams, callout patterns)
+- **Convert bullet/list content to infographics** — pyramids, cycles, radial diagrams, flowcharts with curved connectors, stacked layers with labels. This is the single highest-leverage improvement: list content presented visually is something the model cannot replicate.
 - Better layouts
 - Stronger hierarchy
 - Whitespace
@@ -320,7 +321,7 @@ Possible improvements:
 - Icons
 - Illustrations
 - Photography
-- Callouts
+- Callouts with curved arrows radiating from a subject
 - Highlighted statistics
 - Background variety (mix light, dark, and image-led)
 
@@ -339,6 +340,12 @@ Use `instructions/qa_engine.md` as the checklist.
 Check every slide.
 Automatically fix all issues.
 Repeat until no significant issues remain.
+
+**Mandatory presentation-mode review:** After the QA pass, review the deck in PowerPoint presentation mode (full-screen slideshow). Preview tools and edit-view lie about alignment, overflow, and text rendering. Check specifically for:
+- Text alignment issues
+- Element centering issues
+- Content elements clipped by slide edges
+- Template repetition (slides that look too similar)
 
 ### Step 8 — Export the presentation
 
@@ -390,7 +397,22 @@ Avoid unnecessary decoration.
 Each presentation should feel unique.
 Do not repeat the same design style for every deck.
 
-Change when appropriate:
+### Within a Single Deck (mandatory variation)
+
+**Template variety is a first-class requirement.** The client's top feedback: "many of the slides had the same template." Fix this.
+
+- Use **several different layout patterns** within each deck. No two content slides should look like they came from the same template.
+- Vary background treatments across the deck: mix light, dark, tinted, and image-led backgrounds. Monotone decks (all-white, all-dark) fail.
+- Vary the composition approach: some slides left-anchored, some centered, some asymmetric, some full-bleed.
+- Vary element treatments: some slides use cards, others use open layouts; some use icons, others use images or illustrations.
+- Change accent colors or tints between sections to create visual rhythm while staying within the palette.
+- **The deck should feel like it was designed slide-by-slide, not stamped from a template.**
+
+Maintain consistency in: typefaces, weight system, color palette, corner radius, icon family, page number style, and title sizing. Everything else should vary.
+
+### Across Different Decks
+
+Maximize variety:
 
 - Composition
 - Imagery
@@ -400,9 +422,6 @@ Change when appropriate:
 - Section dividers
 - Chart styles
 - Layout structures
-
-Within a single deck maintain consistency.
-Across different decks maximize variety.
 
 ---
 
@@ -504,14 +523,18 @@ And then the harder question:
 
 **Would the model have made this?** If yes, it isn't finished. Beat the model — don't match it.
 
-### Pre-Submit Checklist (all six must pass)
+### Pre-Submit Checklist (all ten must pass)
 
-1. Opened in PowerPoint, not a preview tool.
+1. **Reviewed in PowerPoint presentation mode** (full-screen slideshow), not just edit view or a preview tool.
 2. Backgrounds change across the deck.
 3. Half the slides carry a real image.
 4. Every word is readable at a glance.
 5. Curvature is structural, not just rounded corners.
 6. At least two drawn explanations in the deck.
+7. **No text alignment issues** — all text blocks are properly aligned (left, center, or right — never accidentally misaligned).
+8. **No element centering issues** — elements intended to be centered are precisely centered, not visually off.
+9. **No elements clipped by the slide edge** unintentionally — deliberate overflow of decorative shapes is fine, but content text, images carrying meaning, or data elements must not be cut off.
+10. **Layout templates vary across slides** — no two content slides should look like they used the same template. Each slide should feel individually designed.
 
 If the answer to any is no:
 - Continue improving.

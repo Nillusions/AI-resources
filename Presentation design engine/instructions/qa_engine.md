@@ -79,7 +79,15 @@ Content preservation is the strictest rule in this engine. A design failure is f
 - [ ] No element *accidentally* clipped by slide edge. Deliberate overflow (shapes, arcs, decorative elements extending past the edge) is accepted and encouraged — judge in PowerPoint, not preview tools.
 - [ ] Corner radii consistent (one token used throughout the deck).
 
-**Auto-fix:** snap to grid, apply spacing scale, unify corner radii.
+### 4.1 Alignment & Centering (client-flagged — check carefully)
+
+- [ ] **No text alignment issues.** Every text block has an intentional alignment (left, center, or right). No text that appears accidentally off-center or misaligned relative to its container or neighboring elements.
+- [ ] **Elements intended to be centered are precisely centered** — verify x-position math: `x = (slideWidth - elementWidth) / 2`. Visually off-center elements are a top client complaint.
+- [ ] **Parallel elements share alignment axes.** If two cards sit side by side, their tops align, their heights match, and their internal text starts at the same offset.
+- [ ] **No content elements clipped by slide edges.** Content text, images carrying meaning, charts, tables, and data labels must not be cut off by the slide boundary. Only decorative shapes (arcs, circles, color blocks) may extend past the edge.
+- [ ] **Vertical centering within containers is precise.** Text inside cards, badges, and banners must be vertically centered — not pushed to the top or bottom of the container.
+
+**Auto-fix:** snap to grid, apply spacing scale, unify corner radii, recalculate center positions.
 
 ---
 
@@ -186,12 +194,18 @@ Cover, section dividers, and closing may deviate from content chrome — content
 
 ---
 
-## 12. Variety Within the Deck
+## 12. Variety Within the Deck (client's #1 feedback — enforce strictly)
 
-- [ ] No two content slides use the exact same layout pattern.
+- [ ] **No two content slides use the exact same layout pattern.** This is the most common client complaint. Each content slide must look individually designed.
+- [ ] **Backgrounds vary across the deck** — mix of light, dark, tinted, and image-led. No monotone decks.
+- [ ] **Composition approaches vary** — some slides left-anchored, some centered, some asymmetric, some full-bleed.
+- [ ] **Element treatments vary** — cards on some slides, open layouts on others; icons on some, images on others.
 - [ ] Section dividers use one consistent divider treatment (variety within dividers is not required).
 - [ ] Chart slides vary in composition where the deck has more than one chart.
-- [ ] The deck does not feel like a template applied 12 times.
+- [ ] The deck does not feel like a template applied 12 times. If you can describe the "template" used for 3+ slides, it fails.
+- [ ] **List content has been evaluated for infographic conversion.** Any slide with bullets that could be a diagram, pyramid, cycle, radial, or callout pattern should have been converted.
+
+**Auto-fix:** If variety fails, redesign the most repetitive slides using different layout patterns, different background treatments, and different composition approaches.
 
 ---
 
@@ -244,7 +258,15 @@ Before the senior-designer gate, verify the deck meets the Four Moves standard:
 - [ ] Mix of light, dark, and image-led backgrounds.
 - [ ] No orange-heavy palettes (we have too many).
 
-**Auto-fix:** If a slide fails the move check, apply one of the Five Approved Patterns: curvature, images, drawn, callouts, or maps. If the deck math doesn't add up, redesign the weakest slides to hit the quotas.
+### List-to-Infographic Check
+
+- [ ] Every slide with bullet/list content has been evaluated for infographic conversion.
+- [ ] Slides containing process lists have been converted to flowcharts or curved-arrow process flows (IG4).
+- [ ] Slides with feature/benefit lists have been converted to radial callouts (IG1) or hub-and-spoke (IG5) where appropriate.
+- [ ] Slides with hierarchical content use pyramids (IG2) or similar visual structures.
+- [ ] Curved arrows and pointers are used throughout the deck — not just straight lines and connectors.
+
+**Auto-fix:** If a slide fails the move check, apply one of the Five Approved Patterns: curvature, images, drawn, callouts, or maps. If the deck math doesn't add up, redesign the weakest slides to hit the quotas. If list content remains as bullets, convert to an IG* infographic pattern.
 
 ---
 
@@ -265,14 +287,18 @@ Sub-questions:
 - Is there any slide that looks like an AI wrote it?
 - Does the deck feel *designed*, or does it feel *generated*?
 
-### Pre-Submit Checklist (all six must pass)
+### Pre-Submit Checklist (all ten must pass)
 
-1. [ ] Opened in PowerPoint, not a preview tool.
+1. [ ] **Reviewed in PowerPoint presentation mode** (full-screen slideshow), not just edit view or a preview tool. This is mandatory — preview tools misrepresent alignment, overflow, and text rendering.
 2. [ ] Backgrounds change across the deck.
 3. [ ] Half the slides carry a real image.
 4. [ ] Every word is readable at a glance.
 5. [ ] Curvature is structural, not rounded corners.
 6. [ ] At least two drawn explanations.
+7. [ ] **No text alignment issues** — all text blocks properly aligned.
+8. [ ] **No element centering issues** — centered elements are precisely centered.
+9. [ ] **No content elements clipped by slide edges** — only decorative shapes may overflow.
+10. [ ] **Layout templates vary across slides** — no two content slides look like the same template.
 
 If any answer is unsatisfying: iterate.
 

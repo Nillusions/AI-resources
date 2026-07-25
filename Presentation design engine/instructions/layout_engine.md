@@ -187,10 +187,10 @@ For each slide:
 
 Every slide should aim for at least one of these. They represent what the model still can't do. Pick one before you design.
 
-1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background. Structural curves that shape the layout.
+1. **Curvature** — Every image is a circle. Overlapping discs, no boxes, tinted background. Structural curves that shape the layout. Curved arrows pointing to elements.
 2. **Images** — One photo does half the work. Full-bleed left, one oversized curved corner right. The image is built into the layout, not dropped into a box.
-3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional. Infographics, pyramids, cycles.
-4. **Callouts** — One subject, labels radiating out. The strongest pattern we have. Use it often. Works for any subject that needs explanation.
+3. **Drawn** — A shape, not a chart. Stacked layers with labels either side. Rounded, dimensional. Infographics, pyramids, cycles. **Convert bullet/list content to visual explanations** — see IG* patterns in `references/layout_patterns.md`.
+4. **Callouts** — One subject, labels radiating out with curved arrows/lines. The strongest pattern we have. Use it often. Works for any subject that needs explanation.
 5. **Maps** — Models still can't draw a real map. Any true geography beats any chart. Use for any content with a geographic dimension.
 
 ### 12.2 Deck Math Quotas
@@ -203,9 +203,13 @@ Per 10 slides (scale proportionally):
 
 Track these counts as you design. One strong slide can satisfy multiple quotas simultaneously.
 
-### Variation rules within a deck
-- If a deck has 3 content slides, use at least 2 different content patterns.
+### Variation rules within a deck (strict — client's top feedback)
+- **No two content slides should look like they came from the same template.** This is the most common failure mode flagged by the client.
+- If a deck has 3 content slides, use at least 3 different content patterns.
 - If a deck has 2 stat slides, use different stat patterns.
+- Vary background treatments: mix light, dark, tinted, and image-led. No monotone decks.
+- Vary composition approaches: some left-anchored, some centered, some asymmetric, some full-bleed.
+- Vary element treatments: cards on some slides, open layouts on others; icons on some, images on others.
 - The cover, section dividers, and closing are one-offs — variety within one deck's covers isn't needed (there's only one cover).
 
 ### Variation rules across decks
@@ -215,7 +219,34 @@ Track these counts as you design. One strong slide can satisfy multiple quotas s
 
 ---
 
-## 13. Text Placement Rules
+## 13. List-to-Infographic Conversion (mandatory check)
+
+**Every slide with bullet/list content must be evaluated for infographic conversion.** This is the single highest-leverage improvement: list content presented visually is something the model cannot replicate. The client specifically requested more infographics to replace list content.
+
+### When to convert
+- Sequential/process lists → flowchart, stepped diagram, or curved-arrow process flow
+- Hierarchical lists → pyramid, nested circles, or tree diagram
+- Cyclical content → cycle diagram with curved arrows between nodes
+- Comparison lists → side-by-side visual panels, matrix, or radial comparison
+- Feature/benefit lists → callout pattern (subject at center, labels radiating out with curved arrows)
+- Geographic content → map with callout pins
+- Timeline content → visual timeline with milestone markers
+- Categorical lists → icon-led grid, card layout, or radial diagram
+
+### When NOT to convert
+- Very short lists (2 items) where visual treatment would be overkill
+- Dense reference data that needs to be scannable (use a table instead)
+- Lists where the exact wording matters more than the structure
+
+### Curved arrows and connectors
+- Use curved arrows/pointers to connect elements and draw attention — not straight lines.
+- Curved connectors between process steps are more dynamic and harder for the model to replicate.
+- Arrows that curve around a subject to point at labels are the strongest callout pattern.
+- Build curved arrows using `pres.ShapeType.arc`, bezier-like compound shapes, or `pres.ShapeType.curvedConnector3`.
+
+---
+
+## 14. Text Placement Rules
 
 - Never place text over the busy part of an image without an overlay.
 - Never place text within 24pt of an image edge — either overlap intentionally with contrast, or set clear separation.
@@ -224,7 +255,7 @@ Track these counts as you design. One strong slide can satisfy multiple quotas s
 
 ---
 
-## 14. Background Variety (mandatory)
+## 15. Background Variety (mandatory)
 
 Backgrounds must change across the deck. Ten identical white pages reads as machine output.
 
@@ -236,7 +267,7 @@ Backgrounds must change across the deck. Ten identical white pages reads as mach
 
 ---
 
-## 15. Layout Failure Modes to Avoid
+## 16. Layout Failure Modes to Avoid
 
 - **Center-everything syndrome** — every element centered horizontally with no visual anchor.
 - **Bullet-list default** — reflex bulleting when the content isn't a list.
@@ -245,10 +276,13 @@ Backgrounds must change across the deck. Ten identical white pages reads as mach
 - **Corner clutter** — logos, page numbers, and dates all crammed into one corner.
 - **Chart + irrelevant image** — decorative image next to a chart adds noise.
 - **Icon parade** — 6 icons in a row with nothing distinguishing them; if the icons don't add meaning, remove them.
+- **Template stamping** — multiple slides that look like they came from the same template. This is the #1 client complaint. Every content slide must look individually designed.
+- **Bullet-list inertia** — leaving content as a bullet list when it could be presented as an infographic, diagram, or visual callout. Always consider converting lists to visual explanations.
+- **Straight-line-only connectors** — using only straight arrows/lines when curved connectors would be more dynamic and harder for the model to replicate.
 
 ---
 
-## 16. When Content Doesn't Fit
+## 17. When Content Doesn't Fit
 
 Priority order:
 
