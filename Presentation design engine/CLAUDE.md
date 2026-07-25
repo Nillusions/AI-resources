@@ -296,7 +296,12 @@ Only improve presentation.
 
 ### Step 5 — Improve slides
 
-**Before designing each slide, pick one of the Five Approved Patterns** (curvature, images, drawn, callouts, maps). Decide which pattern this slide will be first. Designing first and decorating after is how boxy slides happen.
+**Before designing each slide:**
+1. Pick one of the Five Approved Patterns (curvature, images, drawn, callouts, maps).
+2. Check whether any reference deck in `references/` has a layout or infographic that fits this slide's content. If yes, adapt that layout structure (rebuild in pptxgenjs with the current deck's Recipe — never copy exact styling).
+3. If the slide has bullet/list content, evaluate whether it should be converted to an infographic (see IG* patterns in `references/layout_patterns.md`).
+
+Decide the pattern and layout approach first. Designing first and decorating after is how boxy slides happen.
 
 Refer to `references/layout_patterns.md`. Pick a layout pattern per slide. Vary patterns within the deck — no two slides of the same role should share the exact same pattern.
 
@@ -554,6 +559,30 @@ Use the following documents during execution:
 - `references/visual_styles.md` — named visual directions to pick from
 
 These documents define the design system. Always follow them.
+
+### Reference Presentation Files
+
+The `references/` folder contains `.pptx`, `.ppt`, and `.key` files that serve as **design reference material**. These are professionally designed decks demonstrating high-quality infographics, image placement, layout composition, and content mapping.
+
+**Available reference decks:**
+- `Circle Process - Infographic.pptx` — circle-based infographic layouts
+- `Eargo Ring.pptx` — ring/circular design patterns
+- `Ciration - Circle Multipurpose Presentation Template 2.key` — multipurpose circle layouts
+- `Circle Diagram - Keynote.key` — circle diagram patterns
+- `Futuristic Circle Infographic Keynote.key` — futuristic circle infographics
+- `Hungryfire Food and Beverages Google Slide.pptx` — food/beverage design with rich imagery
+- `Non Profit Campaign (no image).pptx` — text-focused nonprofit layout
+- `Orange Creative Agency Business Management.key` — creative agency layouts
+- `Project Proposal Presentation PPT.ppt` — project proposal structure
+
+**How to use reference decks:**
+
+1. **Before designing each slide**, check whether any reference deck contains a layout or infographic that fits the slide's content and purpose.
+2. **Infographic and layout patterns can be used directly** — if a reference deck has an infographic layout (pyramid, radial, cycle, callout) that supports the slide content, replicate that layout structure in pptxgenjs. Adapt colors, fonts, and content to the current deck's Recipe.
+3. **Image placement patterns can be adapted** — study how the reference decks position images (full-bleed, circular masks, split layouts, overlapping) and apply similar composition techniques.
+4. **Content mapping** — reference decks show how to map different types of content (features, processes, comparisons, statistics) to visual structures. Use these as templates for converting bullet/list content to visual explanations.
+5. **To read a reference deck**, use the same parsing approach as input decks: `Expand-Archive` + XML parsing or `adm-zip` + `fast-xml-parser`. Extract the slide structure, shapes, and layout coordinates to understand the composition.
+6. **Never copy exact hex codes, exact images, or branded content** from reference decks. Extract the structural pattern and rebuild it with the current deck's Recipe.
 
 ---
 

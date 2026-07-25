@@ -9,6 +9,7 @@ Rules of use:
 - Across decks, rotate liberally.
 - Apply the deck's chosen visual style (from `visual_styles.md`) to whichever pattern is picked.
 - All measurements are proportional; adjust to fit the 16:9 canvas and the safe area.
+- **Check reference decks first:** Before building a layout from scratch, check if any reference presentation file in `references/` (`.pptx`, `.ppt`, `.key`) has a layout or infographic that fits the slide's content. Reference deck layouts — especially infographics and circular compositions — can be used directly by parsing their structure and rebuilding in pptxgenjs with the current deck's Recipe.
 
 ---
 

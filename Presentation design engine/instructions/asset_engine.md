@@ -263,6 +263,10 @@ Avoid dual y-axis (splits the reader's attention).
 
 Never use PowerPoint default SmartArt. Rebuild from primitives.
 
+### 6.0 Reference deck library (check first)
+
+Before building any diagram or infographic from scratch, check the reference presentation files in `references/` (`.pptx`, `.ppt`, `.key` files). These contain professionally designed infographic layouts — circle diagrams, ring layouts, radial callouts, process flows, and more. If a reference deck has an infographic or layout structure that fits the slide's content, **use it directly**: parse the reference deck's XML to extract the shape structure, positions, and composition, then rebuild in pptxgenjs with the current deck's Recipe (colors, fonts, radius). This is faster and produces higher-quality output than building from scratch.
+
 Common diagram types and their build patterns:
 
 - **Process (linear):** numbered circles connected by 1pt lines with directional arrows at the end.
